@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    zoom: 1;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    /* Garante que o html e o body ocupem pelo menos a altura total da tela */
+
+    min-height: 100vh;
+    /* Garante que o mínimo seja a altura da viewport, útil para conteúdo menor que a tela */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #000113, #000835);
+    color: rgba(255, 255, 255, 0.605);
+    padding: 10px;
+
+}
+
+.container {
+    max-width: 1800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+
+
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+
+    /* Adicionado para evitar a quebra de linha dentro do grupo de entrada */
+}
+
+label {
+    color: rgba(255, 255, 255, 0.605);
+    width: 80%;
+    /* Ajustado conforme necessário */
+    white-space: nowrap;
+    /* Impede que o rótulo quebre a linha */
+    overflow: hidden;
+    /* Esconde qualquer overflow de texto */
+    text-overflow: ellipsis;
+    /* Adiciona "..." se o texto exceder o espaço disponível */
+
+}
+
+input[type="text"] {
+    width: 30%;
+    /* Ajustado para ocupar o espaço restante */
+    padding: 10px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.605);
+    border: 2px solid rgba(255, 255, 255, 0.605);
+    border-radius: 30px;
+    margin-top: 10px;
+
+}
+
+button {
+    padding: 10px 180px;
+    background-color: rgba(255, 255, 255, 0.605);
+    color: #02112e;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+
+}
+
+button:hover {
+    background-color: #84b5ff;
+}
+
+
+#resultados {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+    color: rgba(255, 255, 255, 0.605);
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza horizontalmente os itens */
+    gap: 20px;
+    /* Aumenta a distância entre os itens */
+}
+
+.resultado-item {
+    width: 100%;
+    /* Faz cada resultado ocupar a largura total do contêiner */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    margin: 10px 0;
+    /* Aumenta a distância entre os resultados */
+    padding: 10px 0;
+    /* Opcional: Adiciona um pouco de espaço interno para cada resultado */
+}
+
+.botao-centralizado {
+    text-align: center;
+    margin-top: 20px;
+    /* Ajuste conforme necessário para espaço acima do botão */
+}
+
+
+/* Estilo para o botão de Voltar à Homepage */
+.btn-voltar {
+    position: fixed;
+    bottom: 10px;
+    z-index: 1000;
+    left: 50%;
+    /* Ajustado para 50% para iniciar o posicionamento do centro */
+    transform: translateX(-50%);
+    /* Desloca o botão para a esquerda pela metade de sua largura */
+    padding: 10px;
+    background: linear-gradient(45deg, #00021d, #000a42);
+    color: rgba(255, 255, 255, 0.605);
+    border: 1px solid rgba(255, 255, 255, 0.605);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    /* Adiciona negrito ao texto */
+    display: inline-block;
+    /* Alterado de 'center' para 'inline-block', já que 'center' não é um valor válido para 'display' */
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(45deg, #00043a, #001170);
+}
+
+
+.clicavel {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clicavel:hover,
+.clicavel:focus {
+    background-color: rgba(0, 87, 179, 0.908);
+    /* Um leve cinza como exemplo */
+}
+
+
+.pop-up {
+    position: fixed;
+    bottom: 10px;
+    left: 10%;
+    transform: translateX(-50%);
+    background-color: #0056b3;
+    color: rgba(255, 255, 255, 0.605);
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pop-up.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}

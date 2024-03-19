@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+html {
+    font-size: 16px;
+    zoom: 1;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    /* Garante que o html e o body ocupem pelo menos a altura total da tela */
+
+    min-height: 100vh;
+    /* Garante que o mínimo seja a altura da viewport, útil para conteúdo menor que a tela */
+
+
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(45deg, #000113, #000835);
+        color: rgba(255, 255, 255, 0.605);
+        padding: 10px;
+        /*transform: scale(1);
+    /*transform-origin: top left;
+    /*width: 150%;
+    /* Ajustar conforme necessário
+    height: 150%;
+    /* Ajustar conforme necessário */
+
+    }
+
+    /* Estilos do contêiner principal */
+    .container {
+        max-width: 1850px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #calendario {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Estilos dos dias (anterior e atual) */
+    .dia {
+        background-color: #000113;
+        background: transparent;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        width: calc(50% - 20px);
+        margin: 0 10px;
+    }
+
+    /* Estilos dos títulos dos dias */
+    .dia h2 {
+        color: rgba(255, 255, 255, 0.605);
+        background: transparent;
+
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos das tarefas */
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        background-color: #414e68;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        cursor: move;
+        transition: background 0.3s ease, color 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li:hover {
+        background-color: #35486d;
+    }
+
+    li.dragging {
+        opacity: 0.5;
+    }
+
+    /* Estilos do campo de entrada e botão de adicionar */
+    textarea {
+        background-color: #414e68;
+        color: rgba(255, 255, 255, 0.605);
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.605);
+        border-radius: 6px;
+        resize: none;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    .btn-adicionar {
+        width: 100%;
+        padding: 10px;
+        background-color: #2b406b;
+        color: rgba(255, 255, 255, 0.605);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    .btn-adicionar:hover {
+        background-color: #18356e;
+    }
+
+    /* Estilos dos botões de navegação */
+    .btn-navegacao {
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 0.605);
+        color: #000000;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Roboto', sans-serif;
+
+
+    }
+
+    .btn-navegacao:hover {
+        background-color: #84b5ff;
+    }
+
+    /* Posicionamento fixo dos botões de navegação */
+    #btn-anterior,
+    #btn-proximo {
+        position: fixed;
+        bottom: 10px;
+        z-index: 1000;
+    }
+
+    #btn-anterior {
+        left: 10px;
+    }
+
+    #btn-proximo {
+        right: 10px;
+    }
+
+    /* Estilos do botão de exclusão */
+    .btn-excluir {
+        margin-left: 10px;
+        padding: 2px 5px;
+        background-color: rgba(255, 255, 255, 0.605);
+        color: #052f6b;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-excluir:hover {
+        background-color: #84b5ff;
+    }
+
+    /* Estilos para texto editável */
+    .editable {
+        cursor: text;
+        min-width: 60%;
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        html {
+            zoom: 1;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        #calendario {
+            flex-direction: column;
+        }
+
+        .dia {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .btn-navegacao {
+            position: static;
+            width: auto;
+            margin: 10px;
+        }
+    }
+
+    /* Nova classe para destacar o dia atual */
+    .hoje {
+        border: 2px solid #84b5ff;
+    }
+
+    /* Adicionado ao final do arquivo CSS existente */
+
+    #conteudo-principal {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .bloco {
+        background-color: #02112e;
+        box-shadow: 0 4px 8px #02112e;
+        border-radius: 8px;
+        padding: 0px;
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .bloco h2 {
+        color: rgba(255, 255, 255, 0.605);
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        /* Texto "Anotações dos Projetos" */
+    }
+
+    @media (max-width: 768px) {
+        #conteudo-principal {
+            flex-direction: column;
+        }
+
+        .bloco {
+            width: 100%;
+        }
+    }
+
+    /* Estilo para o botão de Voltar à Homepage */
+    .btn-voltar {
+        position: fixed;
+        bottom: 10px;
+        z-index: 1000;
+        left: 50%;
+        /* Ajustado para 50% para iniciar o posicionamento do centro */
+        transform: translateX(-50%);
+        /* Desloca o botão para a esquerda pela metade de sua largura */
+        padding: 10px;
+        background: linear-gradient(45deg, #00021d, #000a42);
+        color: rgba(255, 255, 255, 0.605);
+        border: 1px solid rgba(255, 255, 255, 0.605);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        font-weight: bold;
+        /* Adiciona negrito ao texto */
+        display: inline-block;
+        /* Alterado de 'center' para 'inline-block', já que 'center' não é um valor válido para 'display' */
+    }
+
+    .btn-voltar:hover {
+        background: linear-gradient(45deg, #00043a, #001170);
+    }
+
+    .btn-calendario-container {
+        position: fixed;
+        bottom: 10px;
+        z-index: 1000;
+        left: 20px;
+    }
+
+    .btn-calendario {
+        padding: 10px;
+        background-color: #414e68;
+        border: 2px solid #84b5ff;
+        border-radius: 5px;
+        color: rgba(255, 255, 255, 0.605);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        white-space: nowrap;
+        display: inline-block;
+        display: center;
+        /* Garante que o botão se comporte como um bloco, mas permitindo o white-space: nowrap; */
+        font-weight: bold;
+        /* Adiciona negrito ao texto */
+
+
+    }
+
+    .btn-calendario:hover {
+        background-color: rgba(0, 87, 179, 0.908);
+    }
+
+    /* Considerações finais */
+    /* Certifique-se de ajustar o HTML conforme necessário, movendo o botão "Voltar à Homepage" para fora do .container, se ainda não o fez. */
+
+    /* Estilos para o ícone de copiar */
+    .icone-copiar {
+        position: absolute;
+        /* Posiciona o ícone no topo esquerdo do container do dia */
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        /* Ajuste o tamanho conforme necessário */
+        cursor: pointer;
+        /* Muda o cursor para indicar que é clicável */
+        color: rgba(255, 255, 255, 0.8);
+        /* Ajuste a cor conforme necessário */
+    }
+
+
+    .dia {
+        position: relative;
+        /* Adicionado para permitir o posicionamento do botão */
+        /* Outros estilos necessários para o layout dos dias */
+    }
+
+    .container-icone {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* Ajustado para espaçamento */
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        /* Ajuste conforme necessário */
+    }
+
+    .texto-copiar {
+        margin-right: 8px;
+        /* Espaço entre o texto e o ícone */
+        font-size: 12px;
+        order: -1;
+        /* Isso coloca o texto à esquerda do ícone */
+    }
+
+
+    .btn-formatador-container {
+        position: fixed;
+        bottom: 10px;
+        z-index: 1000;
+        right: 1%;
+        text-align: center;
+        /* Centraliza o botão */
+    }
+
+    .btn-formatador {
+        padding: 10px;
+        background-color: #414e68;
+        border: 2px solid #84b5ff;
+        border-radius: 5px;
+        color: rgba(255, 255, 255, 0.605);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        white-space: nowrap;
+        display: inline-block;
+        display: center;
+        /* Garante que o botão se comporte como um bloco, mas permitindo o white-space: nowrap; */
+        font-weight: bold;
+        /* Adiciona negrito ao texto */
+    }
+
+    .btn-formatador:hover {
+        background-color: #0056b3;
+        /* Cor de fundo ao passar o mouse */
+    }
+
+
+    .pop-up {
+        position: fixed;
+        bottom: 10px;
+        left: 10%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .pop-up.active {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+}

@@ -1,0 +1,130 @@
+/* Estilos para Anotações dos Projetos */
+#anotacoes-projetos {
+    max-width: 900px;
+    background: transparent;
+    margin: 10px auto;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.605);
+    /* Cor do texto */
+}
+
+#anotacoes-projetos h2 {
+    display: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#anotacoes-projetos .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Adicionado para alinhar igual ao To-Do List */
+    background: #414e68;
+    /* Mantido como no To-Do List */
+    border-radius: 30px;
+    /* Mantido como no To-Do List */
+    padding-left: 20px;
+    /* Ajustado para corresponder ao padding do To-Do List */
+    margin-bottom: 25px;
+    /* Mantido como no To-Do List */
+}
+
+#anotacoes-projetos textarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #414e68;
+    /* Cor do fundo dentro da caixa de texto */
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+    border: none
+}
+
+#anotacoes-projetos button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: rgba(22, 22, 85, 0.605);
+    /* Background color do botão adicionar  */
+    color: rgba(255, 255, 255, 0.605);
+    /* Cor do texto do botão adicionar */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#anotacoes-projetos button:hover {
+    background-color: #06126c81;
+}
+
+/* Estilos para a lista de anotações */
+#lista-anotacoes li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 20px;
+    /* Padding ajustado para corresponder ao To-Do List */
+    background: #414e68;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    position: relative;
+    /* Para posicionamento absoluto do botão de remover */
+}
+
+#lista-anotacoes li span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centraliza verticalmente */
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#lista-anotacoes li span:hover {
+    background: rgba(255, 255, 255, 0.605);
+}
+
+#lista-anotacoes li::before {
+    background-image: none;
+    content: none;
+    /* Remove o conteúdo gerado pelo ::before */
+}
+
+
+/* Estilo para o botão de Voltar à Homepage */
+.btn-voltar {
+    position: fixed;
+    bottom: 10px;
+    z-index: 1000;
+    left: 50%;
+    /* Ajustado para 50% para iniciar o posicionamento do centro */
+    transform: translateX(-50%);
+    /* Desloca o botão para a esquerda pela metade de sua largura */
+    padding: 10px;
+    background-color: #414e68;
+    color: rgba(255, 255, 255, 0.605);
+    border: 2px solid #84b5ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    /* Adiciona negrito ao texto */
+    display: inline-block;
+    /* Alterado de 'center' para 'inline-block', já que 'center' não é um valor válido para 'display' */
+}
+
+.btn-voltar:hover {
+    background-color: rgba(0, 87, 179, 0.908);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Google Ads</title>
+    <link rel="icon" type="image/png" href="../images/googleads.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Botão para Voltar à Homepage, colocado no início para fácil posicionamento -->
+    <a href="../index.html" class="btn-voltar">Voltar à Homepage</a>
+
+    <div class="container">
+        <a href="https://docs.google.com/spreadsheets/d/1gtAfosi0rEHigy7fndS-m1ol2J6jogjL8iwak3apKKk/edit?usp=sharing"
+            target="_blank" style="text-decoration: none; color: inherit;">
+            <h1>Calculadora de Custos de Campanhas</h1>
+        </a>
+        <form id="form-custos">
+            <!-- Campos de entrada -->
+            <div class="input-group">
+                <label for="BRSoftware">Custo [BR] Desenvolvimento de Software é:</label>
+                <input type="text" id="BRSoftware">
+            </div>
+            <div class="input-group">
+                <label for="BRComplementares">Custo [BR] Serviços complementares é:</label>
+                <input type="text" id="BRComplementares">
+            </div>
+            <div class="input-group">
+                <label for="BRPMax">Custo [BR] [GRW] PMax - 22/11/23 é:</label>
+                <input type="text" id="BRPMax">
+            </div>
+            <div class="input-group">
+                <label for="BRTelefone">Custo [GRW] Pesquisa - 12/2023 - Teste A/B - Telefone é:</label>
+                <input type="text" id="BRTelefone">
+            </div>
+            <div class="input-group">
+                <label for="BRRS">Custo [BR] R&S - PERFIL é:</label>
+                <input type="text" id="BRRS">
+            </div>
+            <div class="input-group">
+                <label for="BRHuntingOutsourcing">Custo [BR] Hunting e Outsourcing é:</label>
+                <input type="text" id="BRHuntingOutsourcing">
+            </div>
+            <div class="input-group">
+                <label for="BRAlcance">Custo [GRW] Alcance Youtube Agence Consultoria é:</label>
+                <input type="text" id="BRAlcance">
+            </div>
+            <div class="input-group">
+                <label for="Ajuste">Ajuste foi:</label>
+                <input type="text" id="Ajuste">
+            </div>
+            <div class="botao-centralizado">
+                <button type="button" onclick="calcularTotais()">Calcular Totais</button>
+            </div>
+        </form>
+        <div id="resultados">
+            <!-- Os resultados serão exibidos aqui -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

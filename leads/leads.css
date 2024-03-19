@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    zoom: 1;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    /* Garante que o html e o body ocupem pelo menos a altura total da tela */
+
+    min-height: 100vh;
+    /* Garante que o mínimo seja a altura da viewport, útil para conteúdo menor que a tela */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #000113, #000835);
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.605);
+    overflow-x: hidden;
+    /* Impede o overflow horizontal */
+}
+
+.container {
+    max-width: 1850px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    background-color: transparent;
+    font-size: xx-large;
+    color: rgba(255, 255, 255, 0.605);
+    width: 90%;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.605);
+    border-radius: 30px;
+    resize: none;
+    height: 280px;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-adicionar,
+.btn-adicionar2,
+.btn-adicionar3 {
+    padding: 10px;
+    background-color: #00021d;
+    color: rgba(255, 255, 255, 0.605);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.605);
+    font-weight: bold;
+    /* Define a largura mínima para 50px */
+
+}
+
+.btn-adicionar,
+.btn-adicionar2,
+.btn-adicionar3:hover {
+    background-color: #001170;
+}
+
+
+.btn-adicionar {
+    min-width: 170px;
+    margin-top: 0px;
+}
+
+.btn-adicionar2 {
+    min-width: 200px;
+    margin-top: 0px;
+
+}
+
+.btn-adicionar3 {
+    min-width: 450px;
+}
+
+
+.info-container-duplo,
+.info-container {
+    display: flex;
+    flex-direction: line;
+    justify-content: space-around;
+    gap: 40px;
+    width: 60%;
+    margin-top: 170px;
+}
+
+/* Estilo para o botão de Voltar à Homepage */
+.btn-voltar {
+    position: fixed;
+    bottom: 10px;
+    z-index: 1000;
+    left: 50%;
+    /* Ajustado para 50% para iniciar o posicionamento do centro */
+    transform: translateX(-50%);
+    /* Desloca o botão para a esquerda pela metade de sua largura */
+    padding: 10px;
+    background: linear-gradient(45deg, #00021d, #000a42);
+    color: rgba(255, 255, 255, 0.605);
+    border: 1px solid rgba(255, 255, 255, 0.605);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    /* Adiciona negrito ao texto */
+    display: inline-block;
+    /* Alterado de 'center' para 'inline-block', já que 'center' não é um valor válido para 'display' */
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(45deg, #00043a, #001170);
+}
+
+.pop-up {
+    position: fixed;
+    bottom: 10px;
+    left: 10%;
+    transform: translateX(-50%);
+    background-color: #0056b3;
+    color: #ffffff9a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pop-up.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+button {
+    padding: 10px 250px;
+    background: linear-gradient(45deg, #00021d, #000a42);
+    color: rgba(255, 255, 255, 0.605);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #84b5ff;
+    text-wrap: none;
+    max-height: 50px
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00043a, #001170);
+}
+
+.resultado {
+    background-color: transparent;
+    height: 165px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+#thumbs-down {
+    width: 20px;
+    vertical-align: middle;
+    /* Centraliza verticalmente a imagem com o texto */
+    margin-left: 10px;
+    /* Adiciona espaço entre o texto e a imagem */
+    transition: transform 0.5s;
+    /* Mantém a transição suave */
+}
+
+
+
+#thumbs-up {
+    width: 20px;
+    vertical-align: middle;
+    /* Centraliza verticalmente a imagem com o texto */
+    margin-left: 10px;
+    /* Adiciona espaço entre o texto e a imagem */
+    transition: transform 0.5s;
+    /* Mantém a transição suave */
+}
+
+
+#econodata {
+    width: 100px;
+    vertical-align: middle;
+    /* Centraliza verticalmente a imagem com o texto */
+    margin-left: 0px;
+    /* Adiciona espaço entre o texto e a imagem */
+    transition: transform 0.5s;
+    /* Mantém a transição suave */
+}
+
+
+.resultado,
+.info-div,
+.info-div2,
+.info-adicional {
+    color: rgba(255, 255, 255, 0.605);
+    border-radius: 10px;
+    padding: 20px;
+    /*ALTURA DOS BOTÕES ORIGEM E INTERESSE */
+    text-align: center;
+    width: calc(100%);
+    /* LARGURA DOS BOTÕES ORIGEM E INTERESSE*/
+}
+
+.info-div,
+.info-div2 {
+    background: linear-gradient(45deg, #00021d, #000a42);
+    border: 1px solid rgba(255, 255, 255, 0.605);
+    ;
+}
+
+
+/* Ajustes para o posicionamento das caixas de informações principais e adicionais */
+.info-principal {
+    display: flex;
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    gap: 0px;
+    /* Espaçamento entre as caixas */
+    width: 100%;
+    /* Garante que a div ocupe a largura total disponível */
+    padding: 20px;
+    /* Espaçamento interno para evitar que o conteúdo toque as bordas */
+    margin-left: 39%;
+}
+
+.info-adicional {
+    margin-right: 39%;
+}
+
+
+
+.containerLeadAutomatico,
+.info-adicional {
+    display: flex;
+    /* Utiliza Flexbox para alinhamento */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    flex: 1;
+    /* Distribui o espaço igualmente */
+    min-width: 300px;
+    /* Largura mínima para cada caixa */
+    max-width: 100%;
+    /* Largura máxima para evitar sobreposição */
+    padding: 0px;
+    /* Espaçamento interno */
+    border: 0px solid #02112e;
+    border-radius: 0px;
+    white-space: pre-wrap;
+
+}
+
+@media (max-width: 768px) {
+    .info-principal {
+        flex-direction: column;
+        /* Empilha as caixas verticalmente em telas menores */
+    }
+
+    .containerLeadAutomatico,
+    .info-adicional {
+        max-width: 90%;
+        /* Ajusta a largura máxima para telas menores */
+
+
+    }
+
+}

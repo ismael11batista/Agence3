@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BDR</title>
+    <link rel="icon" type="image/png" href="../images/find_user.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="../index.html" class="btn-voltar">Voltar à Homepage</a>
+
+    <div id="conteudoPerfil">
+        <textarea id="inputText" rows="20" cols="100"></textarea>
+    </div>
+
+    <div class="buttons-row">
+        <button id="copiarNome" class="btn-adicionar">Nome do Contato</button>
+        <button id="copiarCargo" class="btn-adicionar">Último Cargo</button>
+        <button id="copiarEmpresa" class="btn-adicionar">Nome da Empresa</button>
+        <button id="copiarDuracao" class="btn-adicionar">Tempo no Cargo</button>
+    </div>
+
+    <div class="container-botao">
+        <button id="copiarTudo" class="btn-adicionar">Todas as Informações</button>
+    </div>
+
+    <div id="resultados">
+        <p id="nomeContato"></p>
+        <p id="ultimoCargo"></p>
+        <p id="ultimaEmpresa"></p>
+        <p id="duracaoExperiencia"></p>
+    </div>
+
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Selecione uma Opção</p>
+                <img src="images/arrow.png" id="arrowIcon">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">R&S</li>
+                <li class="options">Lean</li>
+                <li class="options">Fábrica</li>
+            </ul>
+        </div>
+        <div id="buttonsContainer" class="buttonsContainer hide">
+            <div id="RSButtons" class="hide">
+                <button id="copiarTextoRSConexao">Conexão RS</button>
+                <button id="copiarTextoRS1">E-mail 1</button>
+                <button id="copiarTextoRS2">E-mail 2</button>
+                <button id="copiarPedidoReuniaoRS">Pedido de Reunião</button>
+                <button id="copiarFollowUp1RS">Follow Up 1</button>
+                <button id="copiarFollowUp2RS">Follow Up 2</button>
+            </div>
+            <div id="LeanButtons" class="hide">
+                <button id="copiarTextoLeanConexao">Conexão Lean</button>
+                <button id="copiarTextoLean1">E-mail 1</button>
+                <button id="copiarTextoLean2">E-mail 2</button>
+                <button id="copiarPedidoReuniaoLean">Pedido de Reunião</button>
+                <button id="copiarFollowUp1Lean">Follow Up 1</button>
+                <button id="copiarFollowUp2Lean">Follow Up 2</button>
+            </div>
+            <div id="FabricaButtons" class="hide">
+                <button id="copiarTextoFabricaConexao">Conexão Fábrica</button>
+                <button id="copiarTextoFabrica1">E-mail 1</button>
+                <button id="copiarTextoFabrica2">E-mail 2</button>
+                <button id="copiarPedidoReuniaoFabrica">Pedido de Reunião</button>
+                <button id="copiarFollowUp1">Follow Up 1</button>
+                <button id="copiarFollowUp2">Follow Up 2</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

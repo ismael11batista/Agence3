@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formatador de Leads</title>
+    <link rel="icon" type="image/png" href="../images/client.png">
+    <link rel="stylesheet" href="leads.css">
+</head>
+
+<body>
+    <!-- Botão para Voltar à Homepage, colocado no início para fácil posicionamento -->
+    <a href="../index.html" class="btn-voltar">Voltar à Homepage</a>
+
+    <div class="container">
+        <textarea id="inputText" class="textarea"></textarea>
+
+        <div class="buttons-row">
+            <button class="btn-adicionar2" onclick="PesquisarLinkedin()">Pesquisar Linkedin <img
+                    src="../images/linkedin-profile.png" id="thumbs-up"></button>
+            <button class="btn-adicionar2" onclick="SiteDaEmpresa()">Site da Empresa<img src="../images/web.png"
+                    id="thumbs-up"></button>
+            <button class="btn-adicionar" onclick="formatarEmpresa()">Nome da Empresa</button>
+            <button class="btn-adicionar" onclick="formatarNome()">Nome do Contato</button>
+            <button class="btn-adicionar" onclick="formatarTelefone()">Telefone</button>
+            <button class="btn-adicionar" onclick="formatarEmail()">E-mail</button>
+            <button class="btn-adicionar" onclick="formatarAssunto()">Assunto</button>
+
+        </div>
+
+
+
+        <div class="buttons-row">
+            <button onclick="copiarTexto()" class="btn-adicionar3">Lead Fila<img src="../images/thumbs-up.png"
+                    id="thumbs-up"></button>
+
+            <button id="copiarTextoEspecial" class="btn-adicionar3">Lead fora da Fila <img
+                    src="../images/thumbs-down.png" id="thumbs-down"></button>
+
+            <button onclick="copiarInformacoesAdicionais()" class="btn-adicionar3"><img src="../images/econodata.png"
+                    id="econodata"></button>
+
+        </div>
+
+        <!-- Container Principal para Informações Automáticas e Adicionais Lado a Lado -->
+        <div class="info-principal">
+            <div class="containerLeadAutomatico">
+                <div id="resultado" class="resultado"></div>
+
+            </div>
+
+
+            <!-- Seção para Informações Adicionais -->
+            <div class="info-adicional">
+                <div id="informacoesAdicionais" class="containerLeadAutomatico">
+                    <!-- Conteúdo das Informações Adicionais será inserido aqui -->
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Container para Interesse e Origem do Lead -->
+        <div class="info-container-duplo">
+            <div id="interesseLead" class="info-div2"></div>
+            <div id="origemLead" class="info-div2"></div>
+        </div>
+    </div>
+
+    <script src="leads.js"></script>
+</body>
+
+</html>
